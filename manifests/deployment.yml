@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: codedkatedotnetcore 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: codedkatedotnetcore
+  template:
+    metadata:
+      labels:
+        app: codedkatedotnetcore 
+    spec:
+      containers:
+        - name: codedkatedotnetcore 
+          image: springbootreactacr.azurecr.io/codedkatedotnetcore
+          ports:
+          - containerPort: 80
